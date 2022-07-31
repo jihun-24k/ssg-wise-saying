@@ -6,12 +6,9 @@ import java.io.ByteArrayOutputStream;
 import java.util.Scanner;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class AppTest {
-    @Test
-    public void appTest(){
-        new App().run();
-    }
     @Test
     public void NotKeyboard_YesString_inScanner() {
         Scanner sc = TestUtil.genScanner("안녕");
@@ -28,5 +25,19 @@ public class AppTest {
         TestUtil.clearSetOutToByteArray(output);
 
         assertEquals("안녕", rs);
+    }
+
+    @Test
+    public void titleCmdTest(){
+        Scanner sc = TestUtil.genScanner("exit");
+        ByteArrayOutputStream output = TestUtil.setOutToByteArray();
+
+        new App(sc).run();
+
+        String rs = output.toString();
+        TestUtil.clearSetOutToByteArray(output);
+
+        assertTrue(rs.contains("== 명언 SSG =="));
+        assertTrue(rs.contains("명령)"));
     }
 }
