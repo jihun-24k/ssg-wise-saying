@@ -12,17 +12,24 @@ public class App {
     public void run(){
 
         // title
-        System.out.println("== 명언 SSG ==");
+        System.out.println("== WiseSaying SSG ==");
 
         outer:
         while (true){
             // cmd
-            System.out.print("명령) ");
+            System.out.print("CMD) ");
             String cmd = sc.nextLine();
             switch (cmd){
                 case "exit" -> { break outer;}
+                case "register" -> {
+                    System.out.print("wiseSaying: ");
+                    String ws = sc.nextLine().trim();
+                    System.out.print("author: ");
+                    String author = sc.nextLine().trim();
+                }
             }
         }
 
     }
+
 }
