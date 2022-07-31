@@ -8,7 +8,7 @@ public class App {
 
     App(Scanner sc){
         this.sc = sc;
-        postController = new PostController();
+        postController = new PostController(sc);
     }
 
     public void run(){
@@ -23,12 +23,8 @@ public class App {
             String cmd = sc.nextLine();
             switch (cmd){
                 case "exit" -> { break outer;}
-                case "register" -> {
-                    System.out.print("wiseSaying: ");
-                    String ws = sc.nextLine().trim();
-                    System.out.print("author: ");
-                    String author = sc.nextLine().trim();
-                }
+                case "register" -> postController.write();
+
             }
         }
 

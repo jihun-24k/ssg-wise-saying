@@ -5,6 +5,12 @@ public class PostDto {
     private String wiseSaying;
     private String author;
 
+    public PostDto(long id, String wiseSaying, String author) {
+        this.id = id;
+        this.wiseSaying = wiseSaying;
+        this.author = author;
+    }
+
     public long getId() {
         return id;
     }
