@@ -4,9 +4,11 @@ import java.util.Scanner;
 
 public class App {
     private Scanner sc;
+    private PostController postController;
 
     App(Scanner sc){
         this.sc = sc;
+        postController = new PostController();
     }
 
     public void run(){
